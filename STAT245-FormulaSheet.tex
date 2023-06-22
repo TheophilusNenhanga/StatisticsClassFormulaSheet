@@ -1,0 +1,221 @@
+\documentclass{article}
+\usepackage[a4paper, margin=2cm, marginparwidth=1cm]{geometry}
+\usepackage{amsmath}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{STAT 245 FORMULA SHEET}
+\author{Theophilus Nyasha Nenhanga}
+\date{June 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\subsection{Mean}
+
+\begin{align*}
+    \text{Mean} &= \frac{\text{Sum of observations}}{\text{Number of Observations}}\\[12pt]
+    \mu &= \text{Population Mean}\\
+    \overline{x} &= \text{Sample Mean}
+\end{align*}
+
+\begin{align*}
+    \text{Population Mean, } \mu &= \frac{\sum x_{i}}{N}\\
+    \text{Sample Mean, } \overline{x} &= \frac{\sum x_{i}}{n}
+\end{align*}
+
+\subsection{Median}
+\begin{align*}
+    \text{Median, } &M\\
+    \text{Position of Median} &= \frac{n+1}{2}
+\end{align*}
+
+\subsection{Measures of Spread}
+
+\subsubsection{Range}
+
+\begin{align*}
+    \text{Range, } &R\\
+    R = \text{largest value} &- \text{Smallest value}
+\end{align*}
+
+\subsubsection{Mean Deviation}
+
+\begin{align*}
+    \text{Mean Deviation, } MD\\
+    \text{For Populations, } \frac{1}{N} \sum_{i = 1}^{N} \left\lvert x_{i} - \mu\right\rvert\\[12pt]
+    \text{For Samples, } \frac{1}{n} \sum_{i = 1}^{N} \left\lvert x_{i} - \overline{x}\right\rvert
+\end{align*}
+
+\begin{align*}
+    \text{N} &= \text{Population size}\\
+    \mu &= \text{Population mean}\\
+    n &= \text{Sample size}\\
+    \overline{x} &= \text{sample mean}
+\end{align*}
+
+\subsubsection{Variance}
+
+\begin{align*}
+    \text{For Population Variance} \sigma^2\\
+    \sigma^2 = \frac{1}{N} \left( \sum x_{i}^2 - \frac{1}{N} {\left(\sum x_{i}\right)}^2 \right)\\[12pt]
+    \text{For Sample Variance} s^2\\
+    s^2 = \frac{1}{N} \left( \sum x_{i}^2 - \frac{1}{n-1} {\left(\sum x_{i}\right)}^2 \right)
+\end{align*}
+
+\subsubsection{Standard Deviation}
+
+\begin{align*}
+    \text{For Population Variance} \sigma\\
+    \sigma = \sqrt{\sigma^2}\\
+    \text{For Sample Variance} s\\
+    s = \sqrt{s^2}
+\end{align*}
+
+\subsection{Dealing with large Samples}
+\begin{align*}
+    \text{Population Size, } N &= \sum f_{i} \\[12pt]
+    \text{Mean, } \mu &= \frac{\sum x}{N} = \frac{\sum (x_{i}f_{i})}{\sum f_{i}} = \frac{\sum (x_{i}f_{i})}{N} \\[12pt]
+    \text{Variance, } \sigma^2 &= \frac{\sum x^2 - \frac{{(\sum x)}^2}{N}}{N} = \frac{\sum ({x_{i}}^2f_{i}) - \frac{{\sum (x_{i}f_{i})}^2}{\sum f_{i}}}{\sum f_{i}} = \frac{\sum ({x_{i}}^2f_{i}) - \frac{{\sum (x_{i}f_{i})}^2}{N}}{N}
+\end{align*}
+
+\section{Bell Shaped Distributions}
+
+\subsection{The z-score}
+
+\begin{align*}
+    &\text{The z score is a multiple of how many standard deviatiosn we are away from the mean.}\\
+    & z = \frac{x - \mu}{\sigma}
+\end{align*}
+
+\section{Margin of Error}
+
+\begin{align*}
+    ME &= z_{\frac{\alpha}{2}}\sqrt{\frac{p \cdot q}{n}}\\
+    p &= \text{proportion} \\
+    n &= \text{sample size} \\
+    z &= \text{critical value}\\ 
+    \alpha &= \text{confidence interval}     
+\end{align*}
+
+\section{Confidence Intervals}
+
+\subsection{When Mean Unknown, Standard Deviation and Sample Size Given}
+
+\begin{align*}
+    2 \cdot z_{\frac{\alpha}{2}} \cdot \frac{\sigma}{\sqrt{n}}
+\end{align*}
+
+\subsection{Sample Mean and Sample Standard Deviation Given}
+
+\begin{align*}
+    \overline{x} -  z_{\frac{\alpha}{2}} \cdot \frac{\sigma}{\sqrt{n}} &\leq \mu \leq \overline{x} +  z_{\frac{\alpha}{2}} \cdot \frac{\sigma}{\sqrt{n}}\\
+    \overline{x} &= \text{sample mean}\\
+    n &= \text{sample size}\\
+    s &= \text{sample standard deviation}\\
+    \alpha &= \text{confidence interval}
+\end{align*}
+
+\subsection{Binomial Populations}
+
+\begin{align*}
+    \hat{p} -  z_{\frac{\alpha}{2}} \cdot \sqrt{\frac{\hat{p}\hat{q}}{n}} &\leq \mu \leq \hat{p} +  z_{\frac{\alpha}{2}} \cdot \sqrt{\frac{\hat{p}\hat{q}}{n}}\\
+    \hat{p} &= \text{proportion}\\
+    \hat{q} &= 1 - \hat{p}\\
+    n &= \text{sample size}\\
+    \alpha &= \text{confidence interval}
+\end{align*}
+
+\section{Two Sample Problems}
+\subsection{Difference Between Population Means}
+\begin{align*}
+    \overline{x}_{1} - \overline{x}_{2} - z_{\frac{\alpha}{2}} \cdot \sqrt{\frac{\sigma^2_{1}}{n_{1}}+\frac{\sigma^2_{2}}{n_{2}}}  &\leq  \mu_{1} - \mu_{2} \leq \overline{x}_{1} - \overline{x}_{2} + z_{\frac{\alpha}{2}} \cdot \sqrt{\frac{\sigma^2_{1}}{n_{1}}+\frac{\sigma^2_{2}}{n_{2}}} \\ 
+    \overline{x}_{1} &= \text{sample mean}_{1}\\
+    \overline{x}_{2} &= \text{sample mean}_{2}\\
+    \sigma^2_{1} &= \text{variance}_{1}\\
+    \sigma^2_{2} &= \text{variance}_{2}\\
+    \alpha &= \text{confidence interval}\\ 
+    n_{1} &= \text{sample size}_{1}\\
+    n_{2} &= \text{sample size}_{2}
+\end{align*}
+
+
+\subsection{Difference Between Population Proportions}
+\begin{align*}
+    \hat{p}_{1} - \hat{p}_2 - z_{\frac{\alpha}{2}} \cdot \sqrt{ \frac{\hat{p}_{1} \cdot \hat{q}_{1}}{n_{1}} + \frac{\hat{p}_{2} \cdot \hat{q}_{2}}{n_{2}} }  &\leq  \hat{p}_{1} - \hat{p}_{2} \leq \hat{p}_{1} - \hat{p}_2 + z_{\frac{\alpha}{2}} \cdot \sqrt{ \frac{\hat{p}_{1} \cdot \hat{q}_{1}}{n_{1}} + \frac{\hat{p}_{2} \cdot \hat{q}_{2}}{n_{2}} } \\ 
+    \hat{p}_{2} &= \text{sample proportion}_{1}\\
+    \hat{p}_{1} &= \text{sample proportion}_{2}\\
+    \hat{q}_{1} &= 1 - \hat{p}_{1}\\ 
+    \hat{q}_{2} &= 1 - \hat{p}_{2}\\ 
+    \alpha &= \text{confidence interval}\\ 
+    n_{1} &= \text{sample size}_{1}\\
+    n_{2} &= \text{sample size}_{2}
+\end{align*}
+
+\section{Estimating The Population Mean}
+
+\subsection{Estimating The Population Mean}
+
+\begin{align*}
+    n \geq \left( \frac{}{} \right)
+\end{align*}
+
+\section{Pooled Variables}
+
+\subsection{Pooled Variance}
+
+\begin{align*}
+    \frac{(n_{1}-1) \cdot s^2_{1} + (n_{2}-1) \cdot s^2_{2}}{n_{1} + n_{2} - 2}
+\end{align*}
+
+\section{Hypothesis Testing}
+\subsection{When to reject}
+\subsubsection{Critical Value Approach}
+\begin{align*}
+    \text { 1. If it is a two tailed test, Critical Values are } -z_{\frac{\alpha}{2}} \text{ and } z_{\frac{\alpha}{2}} \\
+    \bullet \text { Reject } H_{0} \text{ if TS } \leq -z_{\frac{\alpha}{2}} \text{or TS} \geq z_{\frac{\alpha}{2}} \\
+    \bullet \text { Do not reject } H_{0} \text{ if } -z_{\frac{\alpha}{2}} < \text{TS} < z_{\frac{\alpha}{2}} 
+\end{align*}
+
+\begin{align*}
+    \text { 2. If it is a left tailed test, Critical Value is } -z_{\alpha} \\
+    \bullet \text { Reject } H_{0} \text{ if TS } \leq -z_{\alpha} \\
+    \bullet \text { Do not reject } H_{0} \text{ if }  \text{ TS } > -z_{\frac{\alpha}{2}}
+\end{align*}
+
+\begin{align*}
+    \text { 3. If it is a right tailed test, Critical Value is } z_{\alpha} \\
+    \bullet \text { Reject } H_{0} \text{ if TS } \geq -z_{\alpha} \\
+    \bullet \text { Do not reject } H_{0} \text{ if }  \text{ TS } < z_{\frac{\alpha}{2}}
+\end{align*}
+
+\subsubsection{P Value Approach}
+\begin{itemize}
+    \item if it is a two-tailed test, then \[ P Value = P(z \leq - |TS|) + P(z \geq |TS|) = 2 \cdot P(z \leq -|TS|) \]
+    \item If it is a left-tailed test, then \[ P Value = P(z \leq TS) \]  
+    \item If it is a left-tailed test, then \[ P Value = P(z \leq TS) \]
+\end{itemize}
+And For all three types of test, 
+\begin{itemize}
+    \item Reject $ H_{0} $ if $ PValue \leq \alpha $
+    \item Do not reject $ H_{0} $ if $ PValue > \alpha $
+\end{itemize}
+
+\section{Calculating Test Statistics}
+
+\subsection{Testing One Mean}
+
+\begin{align*}
+    \text{TS} &= \frac{x-\mu_{0}}{\frac{s}{\sqrt{n}}} \\ 
+    \text{TS} &= \text{Test Statistic}
+\end{align*}
+
+\subsection{Testing One Proportion}
+\begin{align*}
+    \text{TS} = \frac{\hat{p} - p_{0}}{\sqrt{\frac{p_{0}\cdot q_{0}}{{n}}}}
+\end{align*}
+
+
+\end{document}
